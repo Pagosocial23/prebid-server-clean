@@ -23,6 +23,7 @@ COPY ./ ./
 RUN go mod tidy
 RUN go mod vendor
 ARG TEST="true"
+RUN chmod +x validate.sh
 RUN if [ "$TEST" != "false" ]; then ./validate.sh ; fi
 RUN go build -mod=vendor -ldflags "-X github.com/prebid/prebid-server/v3/version.Ver=`git describe --tags | sed 's/^v//'` -X github.com/prebid/prebid-server/v3/version.Rev=`git rev-parse HEAD`" .
 
