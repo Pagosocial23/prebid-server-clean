@@ -25,7 +25,6 @@ RUN go mod vendor
 ARG TEST="true"
 RUN chmod +x validate.sh
 RUN chmod +x scripts/format.sh
-RUN chmod +x scripts/lint.sh
 RUN chmod +x scripts/check-configs.sh
 RUN chmod +x scripts/check-metrics-docs.sh
 RUN chmod +x scripts/format-metrics-docs.sh
